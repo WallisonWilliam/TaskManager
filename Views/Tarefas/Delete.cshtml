@@ -1,0 +1,33 @@
+﻿@model TaskManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Excluir Tarefa";
+}
+
+<h1>Excluir Tarefa</h1>
+
+<h3>Tem certeza que deseja excluir esta tarefa?</h3>
+
+<div>
+    <h4>@Model.Titulo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Descricao</dd>
+
+        <dt class="col-sm-2">Data de Entrega</dt>
+        <dd class="col-sm-10">@Model.DataEntrega.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Prioridade</dt>
+        <dd class="col-sm-10">@Model.Prioridade</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Confirmar" class="btn btn-danger" />
+</form>
+

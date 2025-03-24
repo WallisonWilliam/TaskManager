@@ -1,0 +1,42 @@
+﻿@model TaskManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Editar Tarefa";
+}
+
+<h1>Editar Tarefa</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Titulo"></label>
+        <input asp-for="Titulo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao"></label>
+        <textarea asp-for="Descricao" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataEntrega"></label>
+        <input asp-for="DataEntrega" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Prioridade"></label>
+        <select asp-for="Prioridade" class="form-control">
+            <option>Baixa</option>
+            <option>Média</option>
+            <option>Alta</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <select asp-for="Status" class="form-control">
+            <option>Pendente</option>
+            <option>Em andamento</option>
+            <option>Concluída</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</form>

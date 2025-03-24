@@ -1,0 +1,28 @@
+﻿@model TaskManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Detalhes da Tarefa";
+}
+
+<h1>Detalhes da Tarefa</h1>
+
+<div>
+    <h4>@Model.Titulo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Descricao</dd>
+
+        <dt class="col-sm-2">Data de Entrega</dt>
+        <dd class="col-sm-10">@Model.DataEntrega.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Prioridade</dt>
+        <dd class="col-sm-10">@Model.Prioridade</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
